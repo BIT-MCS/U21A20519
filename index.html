@@ -66,9 +66,18 @@
    window.SITE_ASSETS = window.SITE_ASSETS || {};
 window.SITE_ASSETS.favicon = window.SITE_ASSETS.favicon || 'site_assets/BIT.png';
 window.PROJECT_DEMO_VIDEO_URL = window.PROJECT_DEMO_VIDEO_URL || 'site_assets/videos/display_video.mp4';
-// 外部视频托管（B站）：将下方变量设置为 B站 iframe 播放器地址（如：https://player.bilibili.com/player.html?bvid=BVxxxxxxxxxxx&page=1&high_quality=1&danmaku=0）
-window.PROJECT_DEMO_VIDEO_EMBED = 'https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=BV1diiEBTE6D&page=1&as_wide=1';
-  // 说明：该链接使用 B 站移动端嵌入播放器（界面更简洁，通常不会触发点击跳转）。
+
+// ======================== 视频展示配置（推荐：GitHub Releases 托管）========================
+// 说明：GitHub 仓库本体禁止推送 >100 MiB 的单文件；500MB 视频不适合放在仓库里。
+// 建议将视频作为 Release asset 上传（单文件 <2 GiB），然后把下方直链填进去。
+// 直链格式：https://github.com/<org>/<repo>/releases/download/<tag>/<file>.mp4
+// 例子：   https://github.com/BIT-MCS/Hangzhou/releases/download/v1/demo.mp4
+window.PROJECT_DEMO_VIDEO_DIRECT_URL = 'https://github.com/BIT-MCS/Hangzhou/releases/download/v1/1080.mp4 ';
+
+// 若视频无法播放，可提供一个“打开原视频/下载”的兜底链接（可填同一个 Release 直链或公开视频页）
+window.PROJECT_DEMO_VIDEO_FALLBACK_OPEN = 'https://github.com/BIT-MCS/Hangzhou/releases/download/v1/1080.mp4 ';
+// =========================================================================================
+// 说明：该链接使用 B 站移动端嵌入播放器（界面更简洁，通常不会触发点击跳转）。
   // 如需改用 PC 端播放器，可使用：https://player.bilibili.com/player.html?aid=115836425603516&bvid=BV1diiEBTE6D&cid=35184971540&p=1&autoplay=0&danmaku=0
 
 window.SITE_ASSETS.achievementFallback = window.SITE_ASSETS.achievementFallback || 'site_assets/images/overview.png';
@@ -544,12 +553,17 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
         <div class="space-y-8">
           <div class="w-full max-w-5xl mx-auto">
             <div class="aspect-video bg-gray-900 rounded-lg flex items-center justify-center relative shadow-2xl overflow-hidden">
-              <iframe class="w-full h-full bg-black" id="demoVideoFrame" src="" scrolling="no" frameborder="0" allowfullscreen="true" allow="fullscreen; picture-in-picture" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
-                <div id="demoVideoPlaceholder" class="absolute inset-0 flex items-center justify-center bg-gray-900/95 text-gray-200 text-sm px-6 text-center">
-                  演示视频采用 B 站外链播放器嵌入。如果在某些网络环境（如校园网）无法加载，请 <a class="underline text-blue-300 hover:text-blue-200" href="https://www.bilibili.com/video/BV1diiEBTE6D/" target="_blank" rel="noopener">点击在 B 站打开</a>。
-                </div>
+              <video class="w-full h-full bg-black" id="demoVideo" controls preload="metadata" playsinline>
+                <source id="demoVideoSource" src="" type="video/mp4" />
+                您的浏览器不支持 HTML5 video 标签。
+              </video>
+              <div id="demoVideoPlaceholder" class="absolute inset-0 flex items-center justify-center bg-gray-900/95 text-gray-200 text-sm px-6 text-center">
+                演示视频将以外部直链方式播放（推荐：GitHub Releases 作为 Release asset 托管）。若当前网络环境无法加载或链接尚未配置，请
+                <a id="demoVideoOpenLink" class="text-blue-300 underline ml-1" href="#" target="_blank" rel="noopener">点击打开/下载视频</a>。
+              </div>
             </div>
           </div>
+        </div>
           <div class="w-full max-w-5xl mx-auto">
             <h3 class="text-2xl font-bold mb-4 text-gray-800">
               杭州世纪中心异常包裹应急处置仿真
@@ -711,15 +725,17 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
       </div>
     </footer>
     <script>
-   (function () {
+(function () {
   function $(id) { return document.getElementById(id); }
 
-  var frame = null;
+  var video = null;
   var placeholder = null;
+  var openLink = null;
 
   function ensure() {
-    frame = $("demoVideoFrame");
+    video = $("demoVideo");
     placeholder = $("demoVideoPlaceholder");
+    openLink = $("demoVideoOpenLink");
   }
 
   function showPlaceholder(show) {
@@ -727,27 +743,60 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
     placeholder.style.display = show ? "flex" : "none";
   }
 
-  function setEmbedSource(url) {
+  function setOpenLink(url) {
+    if (!openLink) return;
+    if (!url) {
+      openLink.removeAttribute("href");
+      return;
+    }
+    openLink.href = url;
+  }
+
+  function setVideoSource(url) {
     ensure();
-    if (!frame) return;
+    if (!video) return;
 
     if (!url) {
-      frame.removeAttribute("src");
+      try { video.removeAttribute("src"); video.load(); } catch (e) {}
       showPlaceholder(true);
       return;
     }
 
-    frame.setAttribute("src", url);
-    showPlaceholder(false);
+    // 先显示占位，等 loadeddata 再隐藏
+    showPlaceholder(true);
+
+    try { video.pause(); } catch (e) {}
+    video.src = url;
+    try { video.load(); } catch (e) {}
+
+    // 尝试自动预热（不自动播放，避免浏览器策略拦截）
+    // 注意：preload=metadata 只拉取元数据，不会马上下载整段视频
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     ensure();
-    var preset = (window.PROJECT_DEMO_VIDEO_EMBED || "").trim();
-    setEmbedSource(preset);
+
+    var direct = (window.PROJECT_DEMO_VIDEO_DIRECT_URL || "").trim();
+    var local = (window.PROJECT_DEMO_VIDEO_URL || "").trim();
+    var chosen = direct || local;
+
+    var fallbackOpen = (window.PROJECT_DEMO_VIDEO_FALLBACK_OPEN || "").trim();
+    setOpenLink(fallbackOpen || chosen);
+
+    setVideoSource(chosen);
+
+    if (video) {
+      video.addEventListener("loadeddata", function () {
+        showPlaceholder(false);
+      });
+      video.addEventListener("error", function () {
+        // 加载失败：保持占位层，并建议用户点击打开/下载
+        showPlaceholder(true);
+      });
+    }
   });
 })();
-  </script>
+</script>
     <script id="site-asset-apply">
    (function () {
   try {
