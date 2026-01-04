@@ -66,6 +66,11 @@
    window.SITE_ASSETS = window.SITE_ASSETS || {};
 window.SITE_ASSETS.favicon = window.SITE_ASSETS.favicon || 'site_assets/BIT.png';
 window.PROJECT_DEMO_VIDEO_URL = window.PROJECT_DEMO_VIDEO_URL || 'site_assets/videos/display_video.mp4';
+// 外部视频托管（B站）：将下方变量设置为 B站 iframe 播放器地址（如：https://player.bilibili.com/player.html?bvid=BVxxxxxxxxxxx&page=1&high_quality=1&danmaku=0）
+window.PROJECT_DEMO_VIDEO_EMBED = 'https://www.bilibili.com/blackboard/html5mobileplayer.html?bvid=BV1diiEBTE6D&page=1&as_wide=1';
+  // 说明：该链接使用 B 站移动端嵌入播放器（界面更简洁，通常不会触发点击跳转）。
+  // 如需改用 PC 端播放器，可使用：https://player.bilibili.com/player.html?aid=115836425603516&bvid=BV1diiEBTE6D&cid=35184971540&p=1&autoplay=0&danmaku=0
+
 window.SITE_ASSETS.achievementFallback = window.SITE_ASSETS.achievementFallback || 'site_assets/images/overview.png';
 window.SITE_ASSETS.achievementImages = Object.assign({}, {
   "res01_method": "site_assets/images/res01_method.png",
@@ -539,8 +544,10 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
         <div class="space-y-8">
           <div class="w-full max-w-5xl mx-auto">
             <div class="aspect-video bg-gray-900 rounded-lg flex items-center justify-center relative shadow-2xl overflow-hidden">
-              <video class="w-full h-full object-contain bg-black" controls="" id="demoVideo" playsinline="" preload="metadata" src="site_assets/videos/display_video.mp4">
-              </video>
+              <iframe class="w-full h-full bg-black" id="demoVideoFrame" src="" scrolling="no" frameborder="0" allowfullscreen="true" allow="fullscreen; picture-in-picture" sandbox="allow-same-origin allow-scripts allow-forms"></iframe>
+                <div id="demoVideoPlaceholder" class="absolute inset-0 flex items-center justify-center bg-gray-900/95 text-gray-200 text-sm px-6 text-center">
+                  演示视频采用 B 站外链播放器嵌入。如果在某些网络环境（如校园网）无法加载，请 <a class="underline text-blue-300 hover:text-blue-200" href="https://www.bilibili.com/video/BV1diiEBTE6D/" target="_blank" rel="noopener">点击在 B 站打开</a>。
+                </div>
             </div>
           </div>
           <div class="w-full max-w-5xl mx-auto">
@@ -707,11 +714,11 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
    (function () {
   function $(id) { return document.getElementById(id); }
 
-  var video = null;
+  var frame = null;
   var placeholder = null;
 
   function ensure() {
-    video = $("demoVideo");
+    frame = $("demoVideoFrame");
     placeholder = $("demoVideoPlaceholder");
   }
 
@@ -720,39 +727,25 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
     placeholder.style.display = show ? "flex" : "none";
   }
 
-  function setVideoSource(url) {
+  function setEmbedSource(url) {
     ensure();
-    if (!video) return;
-    video.pause();
-    video.removeAttribute("src");
-    while (video.firstChild) video.removeChild(video.firstChild);
+    if (!frame) return;
 
     if (!url) {
+      frame.removeAttribute("src");
       showPlaceholder(true);
       return;
     }
 
-    var source = document.createElement("source");
-    source.src = url;
-    var lower = url.toLowerCase();
-    if (lower.endsWith(".webm")) source.type = "video/webm";
-    else if (lower.endsWith(".ogg") || lower.endsWith(".ogv")) source.type = "video/ogg";
-    else source.type = "video/mp4";
-
-    video.appendChild(source);
-    video.load();
+    frame.setAttribute("src", url);
     showPlaceholder(false);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     ensure();
-    var preset = (window.PROJECT_DEMO_VIDEO_URL || (video && video.getAttribute("src")) || "").trim();
-    if (preset) {
-      setVideoSource(preset);
-    } else {
-      showPlaceholder(true);
-    }
-    });
+    var preset = (window.PROJECT_DEMO_VIDEO_EMBED || "").trim();
+    setEmbedSource(preset);
+  });
 })();
   </script>
     <script id="site-asset-apply">
