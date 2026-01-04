@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>
+      边缘环境群体智能感知与能力增强关键技术结项成果展示
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+  </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+    <style>
+   body { font-family: 'Noto Sans SC', sans-serif; }
+        .bit-green { color: #006439; }
+        .bg-bit-green { background-color: #006439; }
+        .section-title { position: relative; display: inline-block; margin-bottom: 2rem; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: #006439; margin-top: 8px; }
+        .img-placeholder { background-color: #e2e8f0; display: flex; align-items: center; justify-content: center; color: #64748b; font-weight: bold; border: 2px dashed #cbd5e1; }
+        .timeline-item { position: relative; padding-left: 1.5rem; border-left: 2px solid #e5e7eb; padding-bottom: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -0.4rem; top: 0.2rem; width: 0.8rem; height: 0.8rem; background: #006439; border-radius: 50%; }
+
+        /* -------- Visual readability improvements -------- */
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 16px; line-height: 1.75; }
+        @media (min-width: 768px) { body { font-size: 16.5px; } }
+        @media (min-width: 1024px) { body { font-size: 17px; } }
+        p, li { line-height: 1.75; }
+        .text-bit-green { color: #006439; }
+        .border-bit-green { border-color: #006439; }
+        .hover\:text-bit-green:hover { color: #006439; }
+
+        /* -------- Custom Scrollbar for Lists -------- */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Sticky headers within the paper list */
+        .sticky-venue-header {
+            position: sticky;
+            top: 0;
+            background-color: #f9fafb; /* match bg-gray-50/white context */
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 10;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Long text wrapping */
+        .break-words { overflow-wrap: anywhere; word-break: break-word; }
+  </style>
+    <link href="site_assets/BIT.png" id="site-favicon" rel="icon"/>
+    <script id="site-asset-config">
+   window.SITE_ASSETS = window.SITE_ASSETS || {};
+window.SITE_ASSETS.favicon = window.SITE_ASSETS.favicon || 'site_assets/BIT.png';
+window.PROJECT_DEMO_VIDEO_URL = window.PROJECT_DEMO_VIDEO_URL || 'site_assets/videos/display_video.mp4';
+window.SITE_ASSETS.achievementFallback = window.SITE_ASSETS.achievementFallback || 'site_assets/images/overview.png';
+window.SITE_ASSETS.achievementImages = Object.assign({}, {
+  "res01_method": "site_assets/images/res01_method.png",
+  "res01_effect": "site_assets/images/res01_effect.png",
+  "res02_method": "site_assets/images/res02_method.png",
+  "res02_effect": "site_assets/images/placeholder.png",
+  "res03_method": "site_assets/images/res03_method.png",
+  "res03_effect": "site_assets/images/res03_effect.png",
+  "res04_method": "site_assets/images/res04_method.png",
+  "res04_effect": "site_assets/images/res04_effect.png",
+  "res05_method": "site_assets/images/res05_method.png",
+  "res05_effect": "site_assets/images/placeholder.png",
+  "res06_method": "site_assets/images/placeholder.png",
+  "res06_effect": "site_assets/images/res06_effect.png",
+  "res07_method": "site_assets/images/res07_method.png",
+  "res07_effect": "site_assets/images/placeholder.png",
+  "res08_method": "site_assets/images/placeholder.png",
+  "res08_effect": "site_assets/images/res08_effect.png"
+}, window.SITE_ASSETS.achievementImages || {});
+  </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <nav class="bg-white shadow-md fixed w-full z-50">
+      <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div>
+            <img class="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold" src="site_assets/BIT.png" alt="Logo 1"/>
+          </div>
+          <div>
+            <img class="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold" src="site_assets/ZJU.png" alt="Logo 2"/>
+          </div>
+          <div>
+            <img class="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold" src="site_assets/SJTU.png" alt="Logo 3"/>
+          </div>
+        </div>
+        <div class="hidden md:flex space-x-8 text-gray-600 font-medium">
+          <a class="hover:text-bit-green transition" href="#info">
+            项目概况
+          </a>
+          <a class="hover:text-bit-green transition" href="#achievements">学术贡献</a>
+          <a class="hover:text-bit-green transition" href="#applications">
+            应用演示
+          </a>
+          <a class="hover:text-bit-green transition" href="#exchange">
+            学术交流
+          </a>
+          <a class="hover:text-bit-green transition" href="#talent">
+            人才培养
+          </a>
+          <a class="hover:text-bit-green transition" href="#papers">
+            学术成果
+          </a>
+        </div>
+      </div>
+    </nav>
+    <header class="relative h-[500px] flex items-center justify-center bg-gray-900 text-white pt-20">
+      <div class="absolute inset-0 bg-gradient-to-r from-green-900 to-black opacity-80 z-10">
+      </div>
+      <img alt="科技背景" class="absolute inset-0 w-full h-full object-cover z-0" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1920&amp;q=80"/>
+      <div class="relative z-20 text-center container px-6">
+        <span class="bg-bit-green px-3 py-1 text-sm rounded uppercase tracking-wider mb-4 inline-block">
+          国家自然科学基金｜区域创新发展联合基金｜重点支持项目
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          边缘环境群体智能感知与能力增强关键技术
+        </h1>
+        <p class="text-base text-gray-300 max-w-3xl mx-auto mb-2">
+          Key Technologies for Intelligent Mobile Crowdsensing and Capability Enhancement on Edge
+        </p>
+        <div class="mt-4 max-w-5xl mx-auto text-gray-300">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-4 text-base md:text-lg leading-relaxed">
+            <span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-white/5 border border-white/10">
+              牵头单位：北京理工大学
+            </span>
+            <span class="hidden md:inline text-gray-500">
+              |
+            </span>
+            <span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-white/5 border border-white/10">
+              参与单位：浙江大学、上海交通大学
+            </span>
+            <span class="hidden md:inline text-gray-500">
+              |
+            </span>
+            <span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-white/5 border border-white/10">
+              项目编号：U21A20519
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="py-20 bg-white" id="info">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-gray-900 mb-2 section-title">01 项目概况</h2>
+
+        <div class="mt-2">
+          <div class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-gray-50 border border-gray-200 px-4 py-2">
+            <span class="text-sm text-gray-600">项目周期</span>
+            <span class="text-sm font-semibold text-gray-900">2022年01月01日 - 2025年12月31日</span>
+          </div>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7 bg-white p-4 md:p-6 rounded-xl border border-gray-200 shadow-sm">
+            <img
+            class="w-full h-auto max-h-96 mx-auto object-contain rounded-md border border-dashed border-gray-300 bg-white"
+            src="site_assets/images/overview.png"
+            alt="项目总图"
+            data-asset="project_overview"
+            onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','<div class=&quot;w-full rounded-md border border-dashed border-gray-300 bg-gray-50 text-gray-500 text-sm flex items-center justify-center py-16&quot;>此处放置项目总图（请替换图片资源）</div>');"
+            />
+
+            <p class="mt-3 text-center text-sm text-gray-500">图0：项目总体框架图</p>
+          </div>
+
+          <div class="lg:col-span-5">
+            <p class="mb-4">
+              本项目针对浙江省提升数字治理能力的需求，聚焦于复杂边缘环境中的“移动群体感知”与能力增强。项目旨在解决群体部署难、数据感知繁、计算能力弱三大技术挑战。从感知侧，通过人机协同（智能手机人群与无人机/车机群）实现对物理空间的长时间、大范围、深层次信息获取；从计算侧，依托边缘智能与群体智能，对异质多源数据进行高效分析。
+            </p>
+            <p class="mb-4">
+              本网站为国家自然科学基金区域创新发展联合基金重点支持项目“边缘环境群体智能感知与能力增强关键技术”（项目编号：U21A20519）的结项成果展示平台，围绕<strong>“移动群体部署—移动群体感知—移动群体计算”</strong>主线，集中呈现4大研究内容与8项关键技术的创新突破、系统实现与应用验证。网站集成典型示范场景“杭州世纪中心异常包裹应急处置仿真”，展示人机协同移动群体感知与边缘智能在反恐防暴及公共安全事件处置中的全流程实证效果，并汇总项目论文、专利与软件著作权等学术与知识产权产出，便于对外交流与成果推广。
+            </p>
+            <p>
+              本网站作为项目结项成果展示平台，将从科技创新、系统应用、学术交流、人才培养及学术成果与知识产权等维度，全方位呈现项目执行期内的关键突破与实证效果。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-gray-100" id="achievements">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 section-title">
+          02 重要学术贡献
+        </h2>
+        <div class="space-y-16">
+          <div class="bg-white/0">
+            <div class="mb-5">
+              <h3 class="text-xl font-bold text-gray-900">
+                学术贡献一：大规模移动人机群体部署技术
+              </h3>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向群体高效部署的关键方法，聚焦于人机互补的优选机制与复杂约束下的协同轨迹规划，并在典型城市级网格化应急部署场景中完成验证，体现出在覆盖收益、部署效率与可执行性方面的综合优势。</p>
+            </div>
+            <div class="space-y-12">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 01
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      互补增强的最小经验熵鲁棒人机群体优选方法
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向大规模移动感知中“收益最大化—公平性”难以兼顾的经验熵驱动迭代趋优人群选择与移动部署方法。采用合作马尔科夫博弈建模，通过CNN+MLP融合城市网格环境特征，并以策略梯度实现动态部署优化；在多种城市地图与动态事件负载设置下实验表明，该方法能够在保持部署公平性的同时获得更稳定的收益提升与收敛表现。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果01 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res01_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图1-1：多智能体强化学习框架JDRL
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果01 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res01_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图1-2：策略求解框架 MOVDN
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图1-1：</span>论文｜IEEE JSAC 2024《Energy-Efficient Ground-Air-Space Vehicular Crowdsensing with 4D Multi-Tasking and Resource Allocation》。</li>
+                    <li><span class="font-semibold text-bit-green">对应图1-2：</span>专利｜《无人机群智感知调度方法、系统、设备及介质》（CN202211445408.0）。</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 02
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      资源受限条件下多目标分布式动态轨迹规划策略
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向资源受限、目标多样与环境动态变化场景的多约束协同控制多目标动态轨迹规划方法MCMU。方法综合任务收益、避障与协同约束进行联合优化，可在复杂场景中实现稳定、可解释的协同决策；在多约束任务与动态障碍环境下验证，能够有效降低冲突风险并提升路径可行性与执行稳定性。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果02 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res02_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图2-1：多任务约束多智能体强化学习群体轨迹规划方法MCMU
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果02 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res02_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图2-2：多机协同覆盖与充电调度效果
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图2-1：</span>论文｜MobiHoc 2024《Multi-Task-Oriented UAV Crowd Sensing with Charging Budget Constraint》。</li>
+                    <li><span class="font-semibold text-bit-green">对应图2-2：</span>论文｜IEEE TMC 2024《Diversity Optimization-based Cooperative UAV Crowd Sensing with Shared Charging Piles》。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/0">
+            <div class="mb-5">
+              <h3 class="text-xl font-bold text-gray-900">
+                学术贡献二：面向场景迁移的多模数据融合与压缩感知
+              </h3>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向复杂数据感知的关键技术体系，聚焦于跨域特征对齐、模型迁移与高鲁棒性压缩感知，并在多源异构数据与跨域任务上开展系统性评测，提升跨场景泛化能力与抗噪鲁棒性。</p>
+            </div>
+            <div class="space-y-12">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 03
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      面向多场景的多模数据特征融合与模型迁移技术
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向应急处置中标注稀缺、场景分布偏移与传感模态差异引发的泛化下降问题的多模数据特征融合与迁移学习技术体系：构建语言—视觉联合学习范式BorLan，设计跨模态注意力与对齐机制，并结合红外到可见光转换与主动学习/不确定性建模提升跨域泛化；在多模态应急感知任务上验证，可显著缓解标注不足与域偏移带来的性能退化。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果03 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res03_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图3-1：语言-视觉联合学习范式BorLan
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果03 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res03_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图3-2：基于区域纯度与预测不确定性的主动迁移学习方法RIPU
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图3-1：</span>（待补充）论文/专利｜BorLan 与红外到可见光转换相关代表性成果。</li>
+                    <li><span class="font-semibold text-bit-green">对应图3-2：</span>论文｜CVPR 2022《Active Learning via Region Impurity and Prediction Uncertainty: A Novel Paradigm for Domain Adaptation》。</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 04
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      基于因果启发的异常共生高鲁棒压缩感知方法
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向边缘侧感知数据分布差异大、异常值频发导致的压缩失真与性能退化问题的因果启发表征学习框架CIRL。方法通过因果干预削弱领域相关信息、以因果分解约束促进表征维度独立，从而提升鲁棒压缩与下游识别性能；在异常/噪声扰动条件下的实验表明，该框架能够保持更稳定的重建质量并提升下游识别鲁棒性。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果04 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res04_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图4-1：因果启发的表征学习框架CIRL
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果04 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res04_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图4-2：面向低资源的内存超参数自适应集成优化方法
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图4-1：</span>论文｜CVPR 2022《Causality Inspired Representation Learning for Domain Generalization》。</li>
+                    <li><span class="font-semibold text-bit-green">对应图4-2：</span>专利｜《一种面向深度学习模型的边缘端重训练内存配置优化方法》（CN202311396860.7）。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/0">
+            <div class="mb-5">
+              <h3 class="text-xl font-bold text-gray-900">
+                学术贡献三：边缘异构设备联邦学习与群体特征识别
+              </h3>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向边缘计算能力提升的协同优化方法，聚焦于多目标协同优化与时空关联的群体行为识别，并在群体行为理解与端侧推理部署设置下验证，体现出在准确率、实时性与可扩展性之间的良好平衡。</p>
+            </div>
+            <div class="space-y-12">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 05
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      基于边缘异构设备匹配与多目标优化的联邦学习技术
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向大规模动态网络下边缘异构设备算力差异与训练资源受限问题的设备匹配与多目标优化联邦学习方法。采用子梯度下降实现稳定优化，并结合模型蒸馏提升异构设备训练精度与收敛效率；在异构算力与通信受限设置下验证，可降低训练资源消耗并提升整体协同效率。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果05 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res05_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图5-1：基于边缘异构设备匹配与多目标优化的联邦学习技术
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果05 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res05_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图5-2：资源分配优化与训练收敛曲线
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图5-1：</span>论文｜ACM TMC 2025《BIT-FL: A Device Matching and Multi-Objective Optimization Based Federated Learning Framework》。</li>
+                    <li><span class="font-semibold text-bit-green">对应图5-2：</span>论文｜IEEE TITS 2023《Participant Selection for Federated Learning with Heterogeneous Data and Limited Resource》。</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 06
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      基于时空融合图神经网络的群体特征识别方法
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向群体感知中“个体—交互—环境”多尺度时空关系建模需求的群体时空融合图神经网络。构建注意力机制与3D-CNN的时空融合结构，实现群体交互关系与环境时序特征的联合表征，并在多场景数据上验证可迁移与可扩展性；结果表明该模型在复杂交互模式下具有更稳健的时空建模能力。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果06 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res06_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图6-1：时空融合图神经网络结构
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果06 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res06_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图6-2：基于多模态感知与特征识别的多气体分类能力
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图6-1：</span>（待补充）论文/专利｜群体时空融合图神经网络与群体行为识别相关代表性成果。</li>
+                    <li><span class="font-semibold text-bit-green">对应图6-2：</span>论文｜Sensors and Actuators B 2025《Intelligent classification of volatile organic compounds based on physics-virtual hybrid cascaded FBAR sensor array》；专利｜《一种基于级联结构的物理虚拟混合式挥发性有机化合物传感阵列》（202411558186.2）。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/0">
+            <div class="mb-5">
+              <h3 class="text-xl font-bold text-gray-900">
+                学术贡献四：面向泛在边缘环境的感知与计算系统
+              </h3>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向反恐防暴应用的新型MEMS传感终端研制与端到端系统集成方案，覆盖传感器研制、算法建模与系统验证，并完成从器件—算法—系统的闭环联调与环境适配验证，支撑现场快速部署与稳定运行。</p>
+            </div>
+            <div class="space-y-12">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 07
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      基于MEMS阵列的多模态生化类危险品智能传感终端
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向爆炸物痕量检测与危化气体感知的MEMS阵列式生化危险品智能传感终端。通过微纳制造与材料掺杂提升传感器性能，实现响应时间降低71.1%、灵敏度提升1.1倍，并对多类挥发性有机物实现高准确分类；同时实现端侧轻量化推理与多目标识别能力，为现场快速筛查提供支撑。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果07 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res07_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图7-1：FBAR多模态传感器阵列原理
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果07 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res07_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图7-2：多气体分类与特征指纹图谱
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图7-1：</span>论文｜Journal of Hazardous Materials 2024《Ultrasensitive and anti-humidity microwave resonator integrated with porous PDMS for volatile organic compounds detection》。</li>
+                    <li><span class="font-semibold text-bit-green">对应图7-2：</span>专利｜《FBAR传感器阵列及基于FBAR传感器阵列的气体识别方法》（CN117705828B）。</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+                <div class="p-6 border-b border-gray-100">
+                  <div class="flex items-center mb-2">
+                    <span class="bg-bit-green text-white text-xs font-bold px-2 py-1 rounded mr-3">
+                      成果 08
+                    </span>
+                    <h3 class="text-xl font-bold text-gray-800">
+                      面向反恐防暴的移动群体感知与协同计算系统
+                    </h3>
+                  </div>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向公共安全事件应急处置全流程的边侧移动群体感知与能力增强端到端系统。集成人机资源优选调度、车—机协同轨迹规划、目标/环境感知、边缘压缩与联邦学习在线优化等关键能力，形成可演示、可验证的系统级解决方案，并通过端—边—云协同链路的闭环演示验证，具备工程化落地条件。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div class="p-4 bg-gray-50 border-r border-gray-100">
+                    <img alt="成果08 方法示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res08_method" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图8-1：系统整体架构与模块交互
+                    </p>
+                  </div>
+                  <div class="p-4 bg-gray-50">
+                    <img alt="成果08 效果示意" class="h-64 w-full object-contain bg-white rounded" data-asset="res08_effect" src="site_assets/images/placeholder.png"/>
+                    <p class="text-center text-sm text-gray-500 mt-2">
+                      图8-2：反恐防暴场景系统运行界面
+                    </p>
+                  </div>
+                </div>
+                <div class="p-6 bg-white border-t border-gray-100">
+                  <h4 class="text-sm font-bold text-gray-900 mb-3">
+                    代表性学术成果
+                  </h4>
+                  <ul class="text-sm text-gray-700 space-y-2 leading-relaxed">
+                    <li><span class="font-semibold text-bit-green">对应图8-1：</span>论文｜ICDE 2023《Air-Ground Collaborative Mobile Crowdsensing for Rural Area with Edge Computing》。</li>
+                    <li><span class="font-semibold text-bit-green">对应图8-2：</span>专利｜《一种基于多模态感知与群体特征识别的反恐防暴应急处置系统》（CN202311374261.8）。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-white" id="applications">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 section-title">
+          03 应用演示
+        </h2>
+        <div class="space-y-8">
+          <div class="w-full max-w-5xl mx-auto">
+            <div class="aspect-video bg-gray-900 rounded-lg flex items-center justify-center relative shadow-2xl overflow-hidden">
+              <video class="w-full h-full object-contain bg-black" controls="" id="demoVideo" playsinline="" preload="metadata" src="site_assets/videos/display_video.mp4">
+              </video>
+            </div>
+          </div>
+          <div class="w-full max-w-5xl mx-auto">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800">
+              杭州世纪中心异常包裹应急处置仿真
+            </h3>
+            <div class="prose text-gray-600 leading-relaxed text-base">
+              <p class="mb-3">
+                本次演示基于浙江省杭州市“世纪中心”周边街区构建仿真场景，复现夜间发现疑似爆炸物包裹后的应急处置闭环。系统在接收警情后自动生成处置目标与双线任务（“包裹排查/处置”与“嫌疑人追踪/封控”），并联动多警力单位、无人机与无人车集群完成资源优选调度、协同轨迹规划、现场侦查与目标跟踪。在边缘侧，系统对视频流进行低时延压缩回传（环境/目标视频传输量分别降低约53%与54%），并通过联邦学习在线自适应提升识别模型在当前场景与光照条件下的准确性；最终融合视觉轨迹特征与气体组分分类结果，实现爆炸物指纹比对与嫌疑目标关联分析，生成处置报告并给出收网指引。
+              </p>
+              <p class="mb-2 font-bold text-gray-800">
+                处置流程关键节点：
+              </p>
+              <ul class="space-y-2 mb-4 list-disc pl-4">
+                <li>
+                  <span class="font-semibold text-bit-green">
+                    T+10s 警情研判：
+                  </span>
+                  系统接收警情并启动爆炸物响应预案，自动生成处置目标与双线任务（包裹处置/嫌疑人追踪）。
+                </li>
+                <li>
+                  <span class="font-semibold text-bit-green">
+                    T+25s 人机资源优选与智能调度：
+                  </span>
+                  综合距离、到场时延、载荷能力与协同约束，在多警局与多平台中优选无人机/无人车编组并给出出动方案。
+                </li>
+                <li>
+                  <span class="font-semibold text-bit-green">
+                    T+90s 车—机协同轨迹规划与到场侦查：
+                  </span>
+                  计算无碰撞航迹与地面路线，设备抵达后开展现场视频侦查与目标跟踪，形成初步风险评估。
+                </li>
+                <li>
+                  <span class="font-semibold text-bit-green">
+                    T+180s 低时延压缩回传：
+                  </span>
+                  对环境与目标感知视频流执行边缘压缩，传输量分别降低约53%与54%，保障链路拥塞条件下的实时回传。
+                </li>
+                <li>
+                  <span class="font-semibold text-bit-green">
+                    T+240s 联邦学习在线自适应：
+                  </span>
+                  在不交换原始视频数据的前提下启动联邦学习与轻量更新，快速提升识别模型对当前场景的适配性（精度曲线收敛至0.92+）。
+                </li>
+                <li>
+                  <span class="font-semibold text-bit-green">
+                    T+300s 多模态精细锁定与报告输出：
+                  </span>
+                  融合视觉轨迹特征与气体组分分类结果完成爆炸物指纹比对并关联嫌疑人B，指导警力封控收网，同时自动生成处置报告与过程留痕。
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-50" id="exchange">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 section-title">
+          04 学术交流
+        </h2>
+        <div class="max-w-4xl mx-auto space-y-6">
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <img class="w-full h-64 object-cover" src="site_assets/images/placeholder.png" alt="学术交流照片 1"/>
+            <div class="p-4 text-gray-700">
+              参加国内外重要学术会议并作专题报告
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <img class="w-full h-64 object-cover" src="site_assets/images/placeholder.png" alt="学术交流照片 2"/>
+            <div class="p-4 text-gray-700">
+              组织项目阶段性学术研讨与成果分享交流
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+            <img class="w-full h-64 object-cover" src="site_assets/images/placeholder.png" alt="学术交流照片 3"/>
+            <div class="p-4 text-gray-700">
+              邀请领域专家开展专题讲座与合作交流
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white" id="talent">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 section-title">
+          05 人才培养
+        </h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gray-50 rounded-xl p-8 border border-gray-100 text-gray-600 leading-relaxed">
+            <p class="text-center">
+              （待补充：研究生培养、本科生科研训练、竞赛指导、课程与教材建设等）
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white" id="papers">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 section-title">
+          06 学术成果
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+          <div class="flex flex-col h-full">
+            <div class="bg-green-50 p-6 rounded-xl border border-green-100 text-center mb-6">
+              <div class="text-4xl font-bold text-bit-green mb-1">
+                <span id="paper-total">46</span>
+              </div>
+              <div class="text-sm font-medium text-gray-600">
+                发表高水平论文 (篇)
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col" style="height: 800px;">
+              <div class="p-5 border-b border-gray-100 bg-gray-50/50 shrink-0">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">论文发表</h3>
+                <input class="w-full px-3 py-2 rounded border border-gray-300 bg-white text-base focus:outline-none focus:ring-2 focus:ring-green-600/20 focus:border-green-600 transition" id="paper-search" placeholder="搜索论文..." type="search"/>
+              </div>
+
+              <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar p-5" id="paper-list">
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col h-full">
+            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center mb-6">
+              <div class="text-4xl font-bold text-blue-800 mb-1">
+                <span id="patent-total">15</span>
+              </div>
+              <div class="text-sm font-medium text-gray-600">
+                申请发明专利 (项)
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col" style="height: 800px;">
+              <div class="p-5 border-b border-gray-100 bg-gray-50/50 shrink-0">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">专利申请</h3>
+                <input class="w-full px-3 py-2 rounded border border-gray-300 bg-white text-base focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition" id="patent-search" placeholder="搜索专利..." type="search"/>
+              </div>
+
+              <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar p-5" id="patent-list">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-10">
+      <div class="container mx-auto px-6 text-center">
+        <p class="mb-2">
+          Copyright © 2025 北京理工大学 LINC All Rights Reserved.
+        </p>
+        <p class="text-sm">
+          地址：北京市海淀区中关村南大街5号
+        </p>
+      </div>
+    </footer>
+    <script>
+   (function () {
+  function $(id) { return document.getElementById(id); }
+
+  var video = null;
+  var placeholder = null;
+
+  function ensure() {
+    video = $("demoVideo");
+    placeholder = $("demoVideoPlaceholder");
+  }
+
+  function showPlaceholder(show) {
+    if (!placeholder) return;
+    placeholder.style.display = show ? "flex" : "none";
+  }
+
+  function setVideoSource(url) {
+    ensure();
+    if (!video) return;
+    video.pause();
+    video.removeAttribute("src");
+    while (video.firstChild) video.removeChild(video.firstChild);
+
+    if (!url) {
+      showPlaceholder(true);
+      return;
+    }
+
+    var source = document.createElement("source");
+    source.src = url;
+    var lower = url.toLowerCase();
+    if (lower.endsWith(".webm")) source.type = "video/webm";
+    else if (lower.endsWith(".ogg") || lower.endsWith(".ogv")) source.type = "video/ogg";
+    else source.type = "video/mp4";
+
+    video.appendChild(source);
+    video.load();
+    showPlaceholder(false);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    ensure();
+    var preset = (window.PROJECT_DEMO_VIDEO_URL || (video && video.getAttribute("src")) || "").trim();
+    if (preset) {
+      setVideoSource(preset);
+    } else {
+      showPlaceholder(true);
+    }
+    });
+})();
+  </script>
+    <script id="site-asset-apply">
+   (function () {
+  try {
+    var cfg = window.SITE_ASSETS || {};
+    var faviconLink = document.getElementById('site-favicon');
+    if (faviconLink && cfg.favicon) faviconLink.href = cfg.favicon;
+
+    var fallback = cfg.achievementFallback || 'site_assets/images/placeholder.png';
+    var map = cfg.achievementImages || {};
+    document.querySelectorAll('img[data-asset]').forEach(function (img) {
+      var key = img.getAttribute('data-asset');
+      var src = map[key] || fallback;
+      img.src = src;
+      img.onerror = function () { img.src = fallback; };
+    });
+  } catch (e) {
+  }
+})();
+  </script>
+    <script id="outputs-render-script">
+(function () {
+  // ============================
+  // Data (from Final Report Template)
+  // ============================
+  const paperGroups = {
+  "期刊｜ACM Transactions on Knowledge Discovery from Data": [
+    "Junjie Ou; Haiming Jin; Xiaocheng Wang; Hao Jiang; Xinbing Wang; Chenghu Zhou; STA-TCN: Spatial-Temporal Attention over Temporal Convolutional Network for Next Point-of-Interest Recommendation, ACM Transactions on Knowledge Discovery from Data, 2023, 17(9)：1-19. SCIE, EI. 第三标注"
+  ],
+  "期刊｜ACM Transactions on Mobile Computing": [
+    "(CCF-A) Chenhao Ying; Fuyuan Xia; David S. L. Wei; Xinchun Yu; Yibin Xu; Weiting Zhang; Xikun Jiang; Haiming Jin; Yuan Luo; Tao Zhang; Dacheng Tao; BIT-FL: Blockchain-Enabled Incentivized and Secure Federated Learning Framework, ACMTransactions on Mobile Computing, 2025, 24(2)：1212-1229. SCIE, EI. 第三标 注"
+  ],
+  "期刊｜ACS Applied Materials & Interfaces": [
+    "Yunqi Cao; Mengyao Fu; Shuyu Fan; Chenyang Gao; Zhiqiang Ma; Dibo Hou; Hydrophobic MOF/PDMS-Based QCM Sensors for VOCs Identification and Quantitative Detection in High-Humidity Environments, ACS Applied Materials & Interfaces, 2024, 16(6): 7721–7731. SCIE. 第二标注"
+  ],
+  "期刊｜Advanced Sensor Research": [
+    "Chengyang Gao; Shuyu Fan; Wei Li; Yongbing Wang; Qianwen Xia; Dibo Hou; Yunqi Cao; A high-performance miniaturized frequency shift detection system for QCM-based mass sensing, Advanced Sensor Research, 2024, 0(0): 2400148. SCIE. 第一标注"
+  ],
+  "期刊｜Cell Reports Physical Science": [
+    "Yunqi Cao; Shuyu Fan; Yongkui Tang; Qiwei Shan; Chengyang Gao; Nelson Sepúlveda; Dibo Hou; Guangxin Zhang; Human-motion adaptability enhancement of wearable electromagnetic vibration energy harvesters toward self-sustained body sensornetworks, Cell Reports Physical Science, 2024, 5(9). SCIE. 第一标注"
+  ],
+  "期刊｜Energy Conversion and Management": [
+    "Shuyu Fan;YongkuiTang; Lurui Zhao; Hai Liu;Yufeng Wang; Dibo Hou;Yunqi Cao; Design optimization of microfabricated coils for volume-limited miniaturized broadband electromagnetic vibration energy harvester, Energy Conversion and Management, 2022, 271(1). SCIE 第一标注"
+  ],
+  "期刊｜IEEE Electron Device Letters": [
+    "Mengyao Fu; Zhiqiang Ma; Chenyang Gao; Yongping Ye; Wei Li; Dibo Hou; Yunqi Cao. A Multi-Functional VOC Sensor Based on Cascaded Quartz Crystal Resonators,IEEE Electron DeviceLetters, 2025, 46(3): 476-479. SCIE 第一标注"
+  ],
+  "期刊｜IEEE Journal on Selected Areas in Communications": [
+    "(CCF-A)Yinuo Zhao; Chi Harold Liu; TianjiaoYi; Guozheng Li; Dapeng Wu; Energy-Efficient Ground-Air-Space Vehicular Crowdsensing by Hierarchical Multi-Agent Deep Reinforcement Learning With Diffusion Models, IEEE Journal on SelectedAreas in Communications, 2024, 42 (12): 3566-3580. SCIE. 第一标注"
+  ],
+  "期刊｜IEEE Sensors Letters": [
+    "Yunqi Cao; Hongyang Shi; Xiaobo Tan; Nelson Sepúlveda; Enabling Negative Pressure Sensing Through Ferroelectret Device, IEEE Sensors Letters, 2022, 6(8). SCIE, EI. 第一标注"
+  ],
+  "期刊｜IEEE Transactions on Electron Devices": [
+    "Yushan Zhou; Shuyu Fan; Ziying Zhu; Shanqian Su, Dibo Hou; Hongjian Zhang,; Yunqi Cao.Enabling High-Sensitivity Calorimetric Flow Sensor Using Vanadium Dioxide Phase-Change Material With Predictable Hysteretic Behavior, IEEETransactions on Electron Devices, 2025, 72(3): 1360-1367. SCIE 第二标注"
+  ],
+  "期刊｜IEEE Transactions on Instrumentation and Measurement": [
+    "Shuyu Fan; Mengyao Fu;Yushan Zhou; Dibo Hou; Guangxin Zhang;Yunqi Cao; Ultralow-frequency biomechanical energy scavenging and human activity recognition at different positions using a multifunctional wearable energy harvester, IEEE Transactions on Instrumentation and Measurement, 2024, 73(0). SCIE，第一标注"
+  ],
+  "期刊｜IEEE Transactions on Intelligent Transportation Systems": [
+    "Jianxin Zhao; Xinyu Chang; Yanhao Feng; Chi Harold Liu; Ningbo Liu; Participant Selection for Federated Learning With Heterogeneous Data in Intelligent Transport System, IEEE Transactions on Intelligent Transportation Systems, 2023, 24(1): 1106-1115. 第一标注."
+  ],
+  "期刊｜IEEE Transactions on Knowledge and Data Engineering": [
+    "(CCF-A) Jiahui Sun; Haiming Jin; Zhaoxing Yang; Lu Su; Optimizing Long-Term Efficiency and Fairness in Ride-Hailing under Budget Constraint via Joint Order Dispatching and Driver Repositioning, IEEE Transactions on Knowledge and Data Engineering, 2024, 36(7)：1-14. SCIE. 第一标注"
+  ],
+  "期刊｜IEEE/ASME Transactions on Mechatronics": [
+    "Shuyu Fan; Haozhen Chi; Yipei Yao; Chenyang Gao; Dibo Hou; Wei Li; Yunqi Cao. A High-Power-Density Ultralow-Frequency Energy Harvester Based on a Magnetic Rotor With Built-In Eccentricity and Ferromagnetic Fillers, IEEE/ASME Transactions on Mechatronics, 2025.(EarlyAccess)SCIE 第二标注"
+  ],
+  "期刊｜Journal of Hazardous Materials": [
+    "Zhiqiang Ma; Mengyao Fu; Chenyang Gao; Shuyu Fan; Haozhen Chi; Wei Li; Dibo Hou; Yunqi Cao; Trenched microwave resonator integrated with porous PDMS for detection and classification of VOCs with enhanced performance, Journal of Hazardous Materials, 2024, 472: 134553. SCIE. 第一标注"
+  ],
+  "期刊｜Measurement Science andTechnology": [
+    "Mengyao Fu; Zhiqiang Ma; Chenyang Gao; Yi Shen; Xiaoyan Song; Dibo Hou; Yunqi Cao. Detection of Volatile Organic Compounds and Their Mixtures Using an E-nose with Cascaded QCM-based Multi-Virtual SensorArray, Measurement Science andTechnology, 2025, 36, 115109. SCIE 第一标注"
+  ],
+  "期刊｜Nano Research": [
+    "Yunqi Cao; Hongyang Shi; Xiaobo Tan; Nelson Sepúlveda; Nanogenerator-based bidirectional pressure sensor array and its demonstration in underwater invasive species detection, Nano Research, 2023, 16: 11822–11831. SCIE. 第一标注"
+  ],
+  "期刊｜Sensors andActuators:B. Chemical": [
+    "Chenyang Gao; Mengyao Fu; Shuyu Fan; Zhiqiang Ma; Yongkui Tang; Dibo Hou; Yunqi Cao. High-performance virtual sensors array based on a single-chip FBAR for volatile organic compounds (VOCs) detection and classification, Sensors andActuators:B. Chemical, 2025, 422: 136687. SCIE 第二标注"
+  ],
+  "期刊｜Wearable and Ubiquitous Technologies (IMWUT)": [
+    "(CCF-A) Rong Ding; Haiming Jin; Dong Xiang; Xiaocheng Wang; Yongkui Zhang; Dingman Shen; Lu Su;Wentian Hao; MingyuanTao; XinbingWang; Chenghu Zhou; Soil Moisture Sensing with UAV-Mounted IR-UWB Radar and Deep Learning, Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2023, 7(1)：1-25. EI. 第二标注"
+  ],
+  "期刊｜期刊未完整显示": [
+    "Qiwei Shan; Yunqi Cao; Haozhen Chi; Shuyu Fan; Ziying Zhu; Dibo Hou. A Star-Nose-Inspired Bionic Soft Robot for Nonvisual Spatial Detection and Reconstruction, 2025, 7: 2400601. SCIE 第二标注"
+  ],
+  "会议｜SIGKDD": [
+    "(CCF-A) Jiahui Sun; Haiming Jin; Zhaoxing Yang; Lu Su; Xinbing Wang; Optimizing Long-Term Efficiency and Fairness in Ride-Hailing via Joint Order Dispatching and Driver Repositioning, ACM SIGKDD 2022, Washington, DC, USA, 2022-8-14 至2022-8-18. 第一标注",
+    "(CCF-A) Zhangxing Yang; Haiming Jin; Guiyun Fan; Min Lu; Yiran Liu; Xinlang Yue; Hao Pan; Zhe Xu; Guobin Wu;Qun Li; Xiaotong Wang; Jiecheng Guo; Rethinking Order Dispatching in Online Ride-Hailing Platforms, ACM SIGKDD 2024, Barcelona, Spain, 2024-8-25 至2024-8-29. EI. 第一标注"
+  ],
+  "会议｜INFOCOM": [
+    "(CCF-A) Guiyun Fan; Haiming Jin; Yiran Zhao; Yiwen Song; Xiaoying Gan; Jiaxin Ding; Lu Su; Xinbing Wang; Joint Order Dispatch and Charging for Electric Self-Driving Taxi Systems, IEEE INFOCOM 2022, Virtual Conference, 2022-5-2 至 2022-5-5. EI. 第一标注",
+    "(CCF-A) Jiahui Sun; Haiming Jin; Rong Ding; Guiyun Fan; Yifei Wei; Lu Su; Multi-Objective Order Dispatch for Urban Crowd Sensing with For-Hire Vehicles, IEEE INFOCOM 2023, NewYork City, NY, USA, 2023-5-17 至2023-5-20. EI. 第一 标注",
+    "(CCF-A) Rong Ding; Haiming Jin; Dingman Shen; Rotation Speed Sensing with mmWave Radar, IEEE INFOCOM 2023, New York City, NY, USA, 2023-5-17 至 2023-5-20. EI. 第二标注",
+    "(CCF-A) Guiyun Fan; Rong Ding; Xiaocheng Wang; Yichen Zhu; Haiming Jin; m3ASL: ASL Gesture Recognition with Moving mmWave Radar, INFOCOM 2025, London, UnitedKingdom, 2025-5-19 至2025-5-22. EI. 第一标注",
+    "(CCF-A) Jiaxi Lv; Guiyun Fan; Xinyue Fu; Jiahui Sun; RongDing; Haiming Jin; mmWave-Based Relay Reflector Reconstruction for LiDAR-Free Around-Corner Human Sensing, INFOCOM 2025, London, United Kingdom, 2025-5-19 至 2025-5-22. EI. 第一标注",
+    "(CCF-A) Zhaoxing Yang; Guiyun Fan; Anjie Cao; Yuchen Guo; Wenlong Li; Tianyuan Liu; Haiming Jin, Learning to Accelerate Traffic Allocation over Large-Scale Networks, INFOCOM 2025, London, United Kingdom, 2025-5-19 至 2025-5-22. EI. 第一标注"
+  ],
+  "会议｜ICDE": [
+    "(CCF-A) Yuxiao Ye; Chi Harold Liu; Zipeng Dai; Jianxin Zhao; Ye Yuan; Guoren Wang; Jian Tang; Exploring both Individuality and Cooperation for Air-Ground Spatial Crowdsourcing by Multi-Agent Deep Reinforcement Learning, I EEEICDE 2023,Anaheim, CA, 2023-4-3 至2023-4-7. EI. 第一标注",
+    "(CCF-A) Yu Wang; Jingfei Wu; Xingyuan Hua; Chi Harold Liu; Guozheng Li; Jianxin Zhao; Ye Yuan; Guoren Wang; Air-Ground Collaborative Spatial Crowdsourcing with UAV Carriers by Geometric Graph Convolutional Multi-Agent Deep Reinforcement Learning, IEEE ICDE 2023, Anaheim, CA, 2023-4-3 至 2023-4-7. EI. 第一标注"
+  ],
+  "会议｜ICDCS": [
+    "Haiming Jin; Yifei Wei; Zhaoxing Yang; Zirui Liu; Guiyun Fan; Multi-Intersection Management for Connected Autonomous Vehicles by Reinforcement Learning, IEEE ICDCS 2023, Hong Kong, 2023-7-18 至 2023-7-21. EI. 第二标注"
+  ],
+  "会议｜AAAI": [
+    "(CCF-A) Haoyi You; Beichen Yu; Haiming Jin; Zhaoxing Yang; Jiahui Sun; User-Oriented Robust Reinforcement Learning, AAAI 2023, Washington DC, USA, 2023-2-7 至2023-2-14. 第一标注",
+    "(CCF-A) Zhaoxing Yang; Haiming Jin; Rong Ding; Haoyi You; Guiyun Fan; Xinbing Wang; Chenghu Zhou; DeCOM: Decomposed Policy for Constrained Cooperative Multi-Agent Reinforcement Learning, AAAI 2023, Washington DC, USA, 2023-2-7 至2023-2-14. EI. 第一标注"
+  ],
+  "会议｜IJCAI": [
+    "(CCF-A)Yichen Zhu; JianYuan; Bo Jiang;Tao Lin; Haiming Jin; Xinbing Wang; Chenghu Zhou; Prediction with Incomplete Data under Agnostic Mask Distribution Shift, IJCAI 2023 ,Macao, S.A.R, 2023-8-19 至2023-8-25. EI. 第三标注"
+  ],
+  "会议｜CVPR": [
+    "(CCF-A) Binhui Xie; Longhui Yuan; Shuang Li; Chi Harold Liu; Xinjing Cheng; Towards Fewer Annotations: Active Learning via Region Impurity and Prediction Uncertainty for Domain Adaptive Semantic Segmentation, IEEE CVPR 2022, New Orleans, 2022-6-19 至 2022-6-24. 第一标注",
+    "(CCF-A) Fangrui Lv; Jian Liang; Shuang Li; Bin Zang; Chi Harold Liu; Ziteng Wang; Di Liu; Causality Inspired Representation Learning for Domain Generalization, IEEE CVPR 2022, New Orleans, 2022-6-19 至2022-6-24. EI. 第一标注"
+  ],
+  "会议｜MobiCom": [
+    "(CCF-A) Rong Ding; Haiming Jin; Ningzhi Zhu; Zijie Chen; Yi Fu; Fengyuan Zhu; Guiyun Fan; Xiaohua Tian; Linghe Kong; Bluetooth-Enabled Transparent RF Sensing, MobiCom2025, Hong Kong, China, 2025-11-4 至2025-11-8. EI. 第一标注"
+  ],
+  "会议｜SenSys": [
+    "Rong Ding; Haiming Jin; Jianrong Ding; Xiaocheng Wang; Guiyun Fan; Fengyuan Zhu,; Xiaohua Tian; Linghe Kong; Push the Limit of Single-Chip mmWave Radar-Based Egomotion Estimation with Moving Objects in FoV,ACM Sensys 2023, Istanbul,Turkiye, 2023-11-13 至2023-11-15. EI. 第一标注"
+  ],
+  "会议｜MobiHoc": [
+    "Jiahui Sun; Guiyun Fan; Haiming Jin; Yiwen Song; Tianyuan Liu; Chenhao Ying; Yuan Luo; Jie Li; Multi-Task-Oriented UAV Crowd Sensing with Charging Budget Constraint, ACM MOBIHOC 2024, Athens, Greece, 2024-10-14 至 2024-10-17. EI. 第一标注"
+  ],
+  "会议｜AAMAS": [
+    "Zhaoxing Yang; Haiming Jin; Yao Tang; Guiyun Fan; Risk-Aware Constrained Reinforcement Learning with Non-Stationary Policies, AAMAS 2024, Auckland, New Zealand, 2024-5-6 至2024-5-10. EI. 第一标注"
+  ],
+  "会议｜IECON": [
+    "Shuyu Fan; Haozhen Chi; Chenyang Gao; Wangdi Du; Dibo Hou; Yunqi Cao;A Brake Pair Misalignment Detection Scheme Based on A Battery-Free Electromagnetic-Based Gap Sensor, IEEE IECON 2023, Singapore, 2023-10-16 至 2023-10-19，EI，第一标注",
+    "Chenyang Gao; Mengyao Fu; Zhiqiang Ma; Shuyu Fan; Dibo Hou; Yunqi Cao; Metal-organic framework (MOF) based film bulk acoustic resonator (FBAR) sensor for volatile organic compounds (VOCs) detection, IEEE IECON 2024, Chicago, USA, 2024-11-3 至2024-11-6. EI. 第一标注"
+  ],
+  "会议｜CPCC": [
+    "Shanqian Su; Minghao Ding; Ziying Zhu; Yushan Zhou; Shuyu Fan; Dibo Hou; Yunqi Cao. Microfluidic-Based Coplanar Capacitive Micro-Displacement Sensors with High Sensitivity and Large Measurement Range. CPCC 2025, Yibin Sichuan, 2025-7-25 至2025-7-27. EI 第二标注",
+    "Shuxun Wang; Haozhen Chi; Shuyu Fan;Yicheng Zhang;Yunqi Cao; Dibo Hou. IoT-Enabled Capacitive Sensing System for Real-Time Detection of Minor Leaks in Bolted Flange Connections. CPCC 2025, Yibin Sichuan, 2025-7-25 至 2025-7-27. EI 第二标注",
+    "Yancheng Bi; Zhiqiang Ma; Zhen Zhou; Chenyang Gao; Xiaoyan Song; Dibo Hou; Yunqi Cao. AFalse Alarm-Free Dual-Wavelength Optical Smoke Detector for High-Humidity Underground Pipeline Galleries.CPCC 2025, Yibin Sichuan, 2025-7-25 至2025-7-27. EI 第二标注"
+  ],
+  "会议｜CAC": [
+    "Chenyang Gao; Shuyu Fan; Haozhen Chi; Yipei Yao; Dibo Hou; Yunqi Cao; A high-sensitivity frequency shift detector for QCM-based miniaturized sensing system, CAC 2024, Qingdao, China, 2024-11-1 至2024-11-3. EI 第二标注"
+  ]
+};
+
+  const patents = [
+  "孙嘉徽; 金海明; 范桂云, 无人机群智感知调度方法、系统、设备及介质， 2022-6-1，中国,202211445408.0.",
+  "金海明; 范桂云; 张永奎; 王孝诚, 一种基于智能小车和 IR-UWB 雷达的沙 地浅埋垃圾检测方法及系统，2023-8-10，中国,202311008795.6.",
+  "金海明; 丁榕; 范桂云; 沈定满, 一种基于 FMCW 毫米波雷达的旋转物体转 速感知方法和系统，2023-5-15，中国,202310547197.X.",
+  "金海明; 丁榕; 范桂云; 王孝诚; 张永奎, 一种土壤湿度感知方法、系统、设 备及介质，2023-3-2，中国,202310202422.6.",
+  "金海明; 丁榕; 范桂云; 王孝诚, 一种基于 FMCW 毫米波雷达和惯性测量单 元的自位姿估计方法和系统，2023-11-7，中国,202311479645.3.",
+  "金海明; 范桂云; 吕嘉溪, 基于毫米波雷达的中继反射面重建方法和系统， 2024-12-27，中国,202411951313.5.",
+  "余北辰；金海明；范桂云，基于非视距感知增强的移动机器人转角导航方法 及系统，申请号：CN202511742901.2",
+  "金海明；范桂云；丁榕，低功耗、全栈式、多功能无线射频感知系统及方法， 申请号：CN202510298821.6",
+  "叶语霄; 刘驰; 王昊, 一种保障元宇宙应用信息质量的无人群体感知方法， 2023-8-2，中国， 202311056761.4.",
+  "徐奕东; 韩锐; 刘驰, 一种面向深度学习模型的边缘端重训练内存配置优化 方法，2023-10-26，中国，202311396860.7.",
+  "曹云琦,傅梦瑶,高晨阳,等. 一种面向高湿度环境的基于石英晶体微天平的挥 发性有机化合物传感器:CN116482187B [P] [2024-11-26].",
+  "曹云琦,马志强,傅梦瑶,等. 基于互补开口谐振环结构的挥发性有机物液体、 气体传感器及其检测方法:CN117705828B [P] [2024-10-01].",
+  "曹云琦; 高晨阳; 范舒羽; 池豪镇; 侯迪波. 一种基于锁相环的谐振器频移 检测装置:CN118631246B [P] [2025-04-01].",
+  "曹云琦;姚一培;范舒羽;侯迪波;张光新. 一种能源自持的集成化微型气象监 测系统:CN 118837974 B [P][2025-09-05]",
+  "曹云琦,傅梦瑶,高晨阳,等. 一种基于级联结构的物理虚拟混合式挥发性有机 化合物传感阵列：202411558186.2 [P]. （实质审查阶段）"
+];
+
+  // ============================
+  // Helpers
+  // ============================
+  function normalize(str) {
+    return (str || '').toLowerCase();
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function formatPaperText(str) {
+    let safe = escapeHtml(str);
+    safe = safe.replace(/([（(])\s*CCF\s*[- ]\s*A\s*([)）])/gi, '<strong class="font-extrabold text-bit-green">$1CCF-A$2</strong>');
+    safe = safe.replace(/\bCCF\s*[- ]\s*A\b/gi, '<strong class="font-extrabold text-bit-green">CCF-A</strong>');
+    return safe;
+  }
+
+  function sumCounts(groupObj) {
+    return Object.values(groupObj || {}).reduce((acc, arr) => acc + (arr ? arr.length : 0), 0);
+  }
+
+  function partitionPapers(groups) {
+    const journals = {};
+    const conferences = {};
+    Object.keys(groups || {}).forEach(k => {
+      const arr = groups[k] || [];
+      if (k.startsWith("期刊｜")) {
+        journals[k.replace(/^期刊｜/, "")] = arr;
+      } else if (k.startsWith("会议｜")) {
+        conferences[k.replace(/^会议｜/, "")] = arr;
+      } else {
+        journals[k] = arr;
+      }
+    });
+    return { journals, conferences };
+  }
+
+  // Render logic optimized for Journal/Conference split
+  function renderPaperList(container, groups, query) {
+    container.innerHTML = '';
+    const q = normalize(query);
+    const { journals, conferences } = partitionPapers(groups);
+
+    // Helper to render a large section (e.g. "Journals")
+    function renderSection(sectionTitle, bucket, colorClass) {
+        const venues = Object.keys(bucket).sort((a,b) => a.localeCompare(b, 'zh-Hans-CN', { sensitivity: 'base' }));
+        let visibleCount = 0;
+
+        // Wrapper for the whole section
+        const sectionWrapper = document.createElement('div');
+        sectionWrapper.className = "mb-8";
+
+        // Section Title (e.g., "期刊")
+        const titleEl = document.createElement('h3');
+        titleEl.className = `text-lg font-bold text-gray-900 border-l-4 ${colorClass} pl-3 mb-4 uppercase tracking-wide`;
+        titleEl.textContent = sectionTitle;
+        sectionWrapper.appendChild(titleEl);
+
+        let hasContent = false;
+
+        venues.forEach(venue => {
+            const items = (bucket[venue] || []).filter(it => !q || normalize(it).includes(q));
+            if (items.length === 0) return;
+            hasContent = true;
+            visibleCount += items.length;
+
+            // Venue Group Wrapper
+            const groupDiv = document.createElement('div');
+            groupDiv.className = "mb-2";
+
+            // Sticky Header for Venue (e.g., "INFOCOM")
+            const vHeader = document.createElement('h4');
+            vHeader.className = "sticky-venue-header text-sm font-bold text-gray-700 flex justify-between items-center cursor-default group";
+            vHeader.innerHTML = `<span>${escapeHtml(venue)}</span>
+                                 <span class="text-xs bg-gray-100 text-gray-500 py-0.5 px-2 rounded-full">${items.length}</span>`;
+            groupDiv.appendChild(vHeader);
+
+            // List Items
+            const ol = document.createElement('ol');
+            ol.className = "space-y-3 mt-2 mb-6 pl-2";
+
+            items.forEach((it, idx) => {
+                const li = document.createElement('li');
+                li.className = "text-sm text-gray-600 leading-relaxed border-b border-gray-50 pb-2 last:border-0 break-words flex gap-2";
+                li.innerHTML = `<span class="font-mono text-gray-400 select-none">${idx + 1}.</span>
+                                <span>${formatPaperText(it)}</span>`;
+                ol.appendChild(li);
+            });
+            groupDiv.appendChild(ol);
+            sectionWrapper.appendChild(groupDiv);
+        });
+
+        if(hasContent) {
+            container.appendChild(sectionWrapper);
+        }
+        return visibleCount;
+    }
+
+    const jCount = renderSection("期刊论文 (Journals)", journals, "border-bit-green");
+    const cCount = renderSection("会议论文 (Conferences)", conferences, "border-blue-600");
+
+    if (jCount + cCount === 0) {
+        container.innerHTML = '<div class="text-center text-gray-400 py-10">未找到匹配的论文</div>';
+    }
+  }
+
+  // Render logic for simple patent list
+  function renderPatentList(container, items, query) {
+    container.innerHTML = '';
+    const q = normalize(query);
+    const filtered = (items || []).filter(it => !q || normalize(it).includes(q));
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<div class="text-center text-gray-400 py-10">未找到匹配的专利</div>';
+        return;
+    }
+
+    const ol = document.createElement('ol');
+    ol.className = 'space-y-4';
+
+    filtered.forEach((it, idx) => {
+      const li = document.createElement('li');
+      li.className = 'text-sm text-gray-600 leading-relaxed border-b border-gray-100 pb-3 last:border-0 break-words flex gap-3';
+      li.innerHTML = `<span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center mt-0.5">${idx + 1}</span>
+                      <span>${escapeHtml(it)}</span>`;
+      ol.appendChild(li);
+    });
+
+    container.appendChild(ol);
+  }
+
+  function updateAcademicTotals() {
+    const paperTotalEl = document.getElementById('paper-total');
+    const patentTotalEl = document.getElementById('patent-total');
+    if (paperTotalEl) paperTotalEl.textContent = sumCounts(paperGroups);
+    if (patentTotalEl) patentTotalEl.textContent = (patents || []).length;
+  }
+
+  // ============================
+  // Boot
+  // ============================
+  document.addEventListener('DOMContentLoaded', function () {
+    updateAcademicTotals();
+
+    const paperContainer = document.getElementById('paper-list');
+    const patentContainer = document.getElementById('patent-list');
+    const paperSearch = document.getElementById('paper-search');
+    const patentSearch = document.getElementById('patent-search');
+
+    if (paperContainer) {
+      renderPaperList(paperContainer, paperGroups, '');
+      if (paperSearch) {
+        paperSearch.addEventListener('input', (e) => {
+          renderPaperList(paperContainer, paperGroups, e.target.value || '');
+        });
+      }
+    }
+
+    if (patentContainer) {
+      renderPatentList(patentContainer, patents, '');
+      if (patentSearch) {
+        patentSearch.addEventListener('input', (e) => {
+          renderPatentList(patentContainer, patents, e.target.value || '');
+        });
+      }
+    }
+  });
+})();
+</script>
+  </body>
+</html>
