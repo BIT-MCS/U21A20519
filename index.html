@@ -253,7 +253,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
               <h3 class="text-xl font-bold text-gray-900">
                 学术贡献一：大规模移动人机群体部署技术
               </h3>
-              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向群体高效部署的关键方法，聚焦于人机互补的优选机制与复杂约束下的协同轨迹规划，并在典型城市级网格化应急部署场景中完成验证，体现出在覆盖收益、部署效率与可执行性方面的综合优势。</p>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了经验熵驱动的迭代趋优人机优选与分布鲁棒机群部署方法，构建了兼顾长期感知收益与群体公平性的合作马尔科夫博弈模型；设计了带充电预算约束的多任务协同轨迹规划技术，通过原始–对偶优化机制与多智能体强化学习框架（JDRL），有效解决了复杂动态环境下的资源受限调度与不确定性适应难题，实现了大规模人机群体的鲁棒协同与高效持续感知。</p>
             </div>
             <div class="space-y-12">
               <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
@@ -349,7 +349,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
               <h3 class="text-xl font-bold text-gray-900">
                 学术贡献二：面向场景迁移的多模数据融合与压缩感知
               </h3>
-              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向复杂数据感知的关键技术体系，聚焦于跨域特征对齐、模型迁移与高鲁棒性压缩感知，并在多源异构数据与跨域任务上开展系统性评测，提升跨场景泛化能力与抗噪鲁棒性。</p>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了语言-视觉联合学习范式（BorLan）与基于区域纯度及预测不确定性的主动迁移学习方法（RIPU），通过显式语义对齐与跨域采样策略显著提升了少样本条件下的模型泛化能力；构建了因果启发的表征学习框架与内存超参数自适应集成优化机制，实现了任务驱动的高鲁棒特征压缩与资源受限下的感知模型快速重训练，攻克了边缘侧多模态数据跨场景适配难与响应迟缓的瓶颈。</p>
             </div>
             <div class="space-y-12">
               <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
@@ -362,7 +362,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                       面向场景模型迁移的多模态数据融合
                     </h3>
                   </div>
-                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了语言-视觉联合学习范式和基于区域纯度与预测不确定性的主动迁移学习方法，通过引导视觉模型将其图像表征与文本分布对齐，从而融合文本与图像模态的知识，提升少样本下的视觉感知模型性能；同时，设计联合区域不纯度与预测不确定性的跨域采样策略，实现高效的区域级与像素级标注机制，提升模型在复杂多变场景下的泛化能力与鲁棒性。</p>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了基于语言-视觉联合学习范式与主动迁移学习的多模态数据融合技术。该技术以视觉-文本表征的显式语义对齐机制为基础，提取跨模态本征特征并构建统一的语言-视觉关联模型（BorLan）；结合分布感知知识迁移策略反演图像表征在多维文本分布中的演化规律，通过融合基于区域纯度与预测不确定性的跨域采样算法（RIPU），大幅提升了少样本及零样本条件下的模型迁移精度与多变场景适配能力。基于该技术，智能感知系统可实现复杂开放环境下语义信息的深度融合与高效标注，在跨域语义分割感知任务中（GTAV 到 Cityscapes），平均分割准确率较同期最优方法提升 2%；在极低样本标注仍能保持高精度感知性能，有效解决了传统视觉模型在面对非结构化复杂环境时泛化性差的瓶颈问题，为反恐防暴工作中未知目标识别与跨区域快速部署提供了核心算法支撑。</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div class="p-4 bg-gray-50 border-r border-gray-100">
@@ -402,7 +402,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                       数据/算法复杂度降维的基于GAN异常共生压缩感知
                     </h3>
                   </div>
-                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了因果启发的表征学习框架和内存超参数自适应的集成优化方法，通过因果干预机制与掩码对抗生成模块，迭代检测包含较少因果信息的维度并强制这些维度包含更多新颖的因果信息，确保压缩后的特征表示能够保留任务相关的关键信息；同时借助在线轻量级估算模块预估模型重训练阶段的内存、时间资源消耗以及精度提升效果，实现内存最优规则下的感知模型重训练，解决多模响应迟缓的挑战。</p>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了基于因果启发表征学习与生成对抗网络（GAN）的共生压缩感知技术。该技术以因果干预机制与掩码对抗生成模块为基础，通过迭代筛选非因果冗余维度并强化新颖因果特征，构建了任务驱动的轻量化特征压缩模型（CIRL）；结合在线轻量级估算模块反演模型重训练阶段的资源消耗规律，融合内存超参数自适应集成优化算法，实现了在内存最优规则下的感知模型快速迭代。基于该技术，部署于单兵侦察终端的轻量化模型，可实现海量多模态数据的高效降维与实时处理。PACS数据集下该技术在保证泛化性能达 90.12% 的前提下，实现特征压缩率超 50%；在持续域自适应场景中，同精度下训练内存消耗降低 4.1 倍，训练时间减少 5.3 倍，有效解决了边缘侧设备因算力与带宽受限导致的多模态情报响应迟缓问题，保障了系统在突发事件下对高风险目标的秒级感知与精准溯源能力。</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div class="p-4 bg-gray-50 border-r border-gray-100">
@@ -442,7 +442,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
               <h3 class="text-xl font-bold text-gray-900">
                 学术贡献三：边缘异构设备联邦学习与群体特征识别
               </h3>
-              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向边缘计算能力提升的协同优化方法，聚焦于多目标协同优化与时空关联的群体行为识别，并在群体行为理解与端侧推理部署设置下验证，体现出在准确率、实时性与可扩展性之间的良好平衡。</p>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了基于边缘异构设备匹配与多目标优化的联邦学习协同计算技术，利用子梯度下降与模型蒸馏机制，解决了非独立同分布数据下的异构终端协同训练难题；研发了基于改进 Butterworth Van Dyke（m-BVD）模型与虚拟传感阵列的群体特征识别方法，实现了对混合气体多模态信号的特征解耦与高精度分类，有效提升了资源受限边缘网络中的协作识别精度与通信效率。</p>
             </div>
             <div class="space-y-12">
               <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
@@ -455,7 +455,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                       基于异构设备资源多目标优化的联邦学习技术
                     </h3>
                   </div>
-                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了协同计算，能够实现多个异构设备的迁移训练，提升识别精度。本方法采用子梯度下降算法进行优化，并应用模型蒸馏的调整方法提升异构设备的训练精度。本方法与已有去中心化训练方法D-PSGD、PENS和中心化数据增强训练方法Hybrid-FL在图像分类准确度指标上进行对比。实验结果表明，在所有不同的移动终端设置总数下，本方法比已有方法均获得了更高的准确度，相比PENS方法准确度提升最高，平均提升6%。</p>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了基于边缘异构设备匹配与多目标优化的联邦学习协同计算技术。该技术以多智能体协同博弈与知识蒸馏机制为基础，构建适应动态网络的分布式训练架构；结合子梯度下降优化算法与模型蒸馏调整策略，反演异构终端在非独立同分布数据下的梯度更新规律，通过融合通信开销约束与精度增益模型，大幅提升了资源受限条件下的模型迁移效率与识别性能。基于该技术，反恐防暴协同作战系统可实现多源异构情报的隐私保护训练与联合推理，在移动终端数量动态变化的复杂网络环境下，图像分类与目标识别准确度较现有去中心化方法（如 PENS）平均提升 6%；有效解决了反恐侦察中因设备性能差异大、通信带宽窄导致的协同识别精度低的问题，为跨区域、多兵种的联合情报分析提供了高可靠的算法支撑。</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div class="p-4 bg-gray-50 border-r border-gray-100">
@@ -533,7 +533,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
               <h3 class="text-xl font-bold text-gray-900">
                 学术贡献四：面向泛在边缘环境的感知与计算系统
               </h3>
-              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了面向反恐防暴应用的新型MEMS传感终端研制与端到端系统集成方案，覆盖传感器研制、算法建模与系统验证，并完成从器件—算法—系统的闭环联调与环境适配验证，支撑现场快速部署与稳定运行。</p>
+              <p class="text-base text-gray-600 mt-2 leading-relaxed">提出了基于薄膜体声波谐振器（FBAR）阵列的微型化多模态生化感知终端，突破了高灵敏度痕量检测与混合物分辨技术；构建了面向公共安全事件应急处置的“部署—感知—计算”一体化移动群体智能协同系统，集成人机资源优选、边缘深度压缩与端—边—云协同计算能力，在数字孪生与实战演练中验证了从分钟级资源编组到秒级精准溯源的全流程闭环处置效能。</p>
             </div>
             <div class="space-y-12">
               <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
@@ -546,7 +546,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                       基于MEMS阵列的多模态生化类危险品终端传感器研发
                     </h3>
                   </div>
-                  <p class="text-gray-600 text-base leading-relaxed mt-3">研发了一种基于薄膜体声波谐振器（FBAR）的大气污染物原位检测传感器，该传感器基于压电效应工作，当外部交流电流频率与FBAR的固有谐振频率相匹配时，会发生厚度伸缩振动模式（TE模式）的共振，该模式具有高机电耦合系数。这种模式对谐振器表面负载的质量非常敏感，表现为负频率偏移。本工作中开发的裸FBAR具有约1.25 GHz的自然谐振频率和超过1400的品质因数，大约是该领域其他工作的1.5-2倍，提高了信噪比和传感分辨率，最终实现了多种污染物的高准确率定性分类及高灵敏度定量检测。</p>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">研发了一种基于薄膜体声波谐振器（FBAR）的大气污染物原位检测传感器。该传感器以压电效应激发的厚度伸缩振动模式为基础，利用 Sauerbrey 质量负载效应提取微量气体分子的多维动态特征；结合改进的 Butterworth Van Dyke（m-BVD）模型与级联谐振器设计，构建了高机电耦合系数的虚拟传感阵列，实现了对复杂混合气体的多通道特征解耦与高分辨识别。基于该技术，研发的微型化探测终端具备约 1.25 GHz 的自然谐振频率与超过 1400 的品质因数（Q值），性能指标优于同类研究 1.5–2 倍；在典型反恐防暴场景下，可实现对爆炸物前体及有毒挥发性有机物（VOCs）的 ppb 级痕量检测，混合物定性分类准确率达 94.6%，为公共场所生化威胁的早期发现与精准溯源提供了核心传感硬件支撑。</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div class="p-4 bg-gray-50 border-r border-gray-100">
@@ -589,7 +589,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
                       面向反恐防暴等泛在边缘环境的移动群体感知与计算系统
                     </h3>
                   </div>
-                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向公共安全事件应急处置全流程的边侧移动群体感知与能力增强端到端系统。集成人机资源优选调度、车—机协同轨迹规划、目标/环境感知、边缘压缩与联邦学习在线优化等关键能力，形成可演示、可验证的系统级解决方案，并通过端—边—云协同链路的闭环演示验证，具备工程化落地条件。</p>
+                  <p class="text-gray-600 text-base leading-relaxed mt-3">提出了面向公共安全事件应急处置的“部署—感知—计算”一体化移动群体智能协同系统。该系统以数字孪生与端—边—云协同架构为基础，集成人机资源优选调度与车机协同轨迹规划模型；结合边缘侧多模态数据深度压缩与联邦学习在线优化技术，构建了全流程闭环的敏捷响应体系，实现了在低带宽、强动态边缘环境下的高效资源编排与精准情报处理。基于该系统，指挥中心可在突发暴恐事件中实现无人机/车与警力资源的分钟级编组与盲区覆盖巡查，实测数据显示，在保障任务关键信息完整的前提下，系统可将 1080p 视频回传内存占用降低 53%–54%，并通过协同计算在 4 分钟内完成从感知到决策的全流程处置，识别准确率突破 92% ，显著提升了高风险环境下对隐匿目标的快速锁定与应急处突能力。</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div class="p-4 bg-gray-50 border-r border-gray-100">
@@ -807,7 +807,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
 
               <div class="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col" style="height: 520px;">
                 <div class="p-5 border-b border-gray-100 bg-gray-50/50 shrink-0">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">博士</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">博士培养情况</h3>
                 </div>
                 <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar p-5" id="talent-phd-list">
                   <div class="space-y-5">
@@ -854,7 +854,7 @@ window.SITE_ASSETS.achievementImages = Object.assign({}, {
 
               <div class="bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col" style="height: 520px;">
                 <div class="p-5 border-b border-gray-100 bg-gray-50/50 shrink-0">
-                  <h3 class="text-xl font-bold text-gray-900 mb-3">硕士</h3>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">硕士培养情况</h3>
                 </div>
                 <div class="flex-1 overflow-y-auto min-h-0 custom-scrollbar p-5" id="talent-master-list">
 <ol class="list-decimal pl-5 space-y-3 text-sm text-gray-700 leading-relaxed marker:text-gray-400">
