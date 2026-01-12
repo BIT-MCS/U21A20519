@@ -1276,6 +1276,16 @@ function formatPaperText(str) {
     return wrapStrong(`${left}${normalizedInner}${right}`);
   });
 
+  // 3) （可选）括号外的 CCF-A / SCI Q1 也加粗
+  //    为避免出现嵌套 <strong>，只处理不在 strong 块内的片段
+  const parts = safe.split(/(<strong[^>]*>[\s\S]*?<\/strong>)/i);
+  for (let i = 0; i < parts.length; i++) {
+    if (/^<strong\b/i.test(parts[i])) continue;
+    parts[i] = parts[i]
+      .replace(/\bCCF-A\b/g, wrapStrong("CCF-A"))
+      .replace(/\bSCI Q1\b/g, wrapStrong("SCI Q1"));
+  }
+
   return parts.join("");
 }
 
